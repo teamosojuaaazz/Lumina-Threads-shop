@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Threads - Ropa Sostenible y Minimalista</title>
+    <style>
+        /* Estilos Inspirados en Prune: Minimalismo Extremo */
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, sans-serif; /* Similar a Prune: Limpio y nativo */
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            line-height: 1.7;
+            font-weight: 300;
+            letter-spacing: -0.01em;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1.5rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid #F8F8F8;
+            transition: all 0.3s ease;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        nav h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: 300;
+            letter-spacing: -0.05em;
+            color: #1A1A1A;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+        }
+        nav li {
+            margin-left: 3rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1A1A1A;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            opacity: 0.8;
+        }
+        nav a:hover {
+            color: #9CA3A3;
+            opacity: 1;
+        }
+        /* Hero Section: Full-Bleed como Prune */
+        .hero {
+            height: 100vh;
+            background-image: url('https://images.unsplash.com/photo-1551028719-00167b16eac5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'); /* Stock gratis: Mujer con ropa minimalista en paisaje */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2); /* Overlay más sutil que antes */
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            padding: 0 2rem;
+        }
+        .hero h2 {
+            font-size: 5rem; /* Grande y aireado como Prune */
+            font-weight: 300;
+            margin: 0 0 1rem 0;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        /* Sección Sobre Nosotros: Espaciado Generoso */
+        .about {
+            max-width: 1200px;
+            margin: 8rem auto; /* Más padding vertical */
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem; /* Gap más amplio */
+            align-items: start;
+        }
+        .about-text h3 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            color: #9CA3A3; /* Acento sutil */
+            letter-spacing: -0.02em;
+        }
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+            max-width: 500px;
+        }
+        .about-image {
+            height: 400px; /* Más alto para impacto */
+            background-image: url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'); /* Stock: Taller de costura minimalista */
+            background-size: cover;
+            background-position: center;
+            border-radius: 0; /* Sin bordes, plano como Prune */
+        }
+        /* Productos Destacados: Grid Limpio */
+        .products {
+            max-width: 1200px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        .products h3 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 4rem;
+            color: #1A1A1A;
+            letter-spacing: -0.02em;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem; /* Espacio amplio entre cards */
+        }
+        .product-card {
+            padding: 0;
+            transition: opacity 0.3s ease;
+        }
+        .product-card:hover {
+            opacity: 0.8;
+        }
+        .product-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            margin-bottom: 2rem;
+        }
+        .product-card h4 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: -0.01em;
+        }
+        .product-card p {
+            font-size: 1rem;
+            color: #666666;
+            margin: 0;
+            font-weight: 300;
+        }
+        /* Contacto: Minimal y Centrado */
+        .contact {
+            background: #FFFFFF;
+            padding: 6rem 2rem;
+            text-align: center;
+            border-top: 1px solid #F8F8F8;
+        }
+        .contact h3 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+        .contact p {
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            color: #666666;
+        }
+        .btn {
+            display: inline-block;
+            background: transparent;
+            color: #9CA3A3;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border: 1px solid #9CA3A3;
+            border-radius: 0; /* Sin bordes redondeados */
+            font-size: 1rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+        .btn:hover {
+            background: #9CA3A3;
+            color: #FFFFFF;
+        }
+        /* Responsive: Adaptable como Prune */
+        @media (max-width: 768px) {
+            .about {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                margin: 4rem auto;
+            }
+            .hero h2 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            nav ul {
+                display: none; /* En real: Menú hamburguesa */
+            }
+            .product-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .products h3, .about-text h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Lumina Threads</h1>
+            <ul>
+                <li><a href="#about">Historia</a></li>
+                <li><a href="#products">Colección</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Lumina Threads</h2>
+            <p>Minimalismo sostenible. Inspirado en la luz argentina.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h3>Nuestra Historia</h3>
+            <p>Lumina Threads es una marca de ropa emergente fundada en 2022 en Córdoba, Argentina, por la diseñadora textil Sofia Rivera. Inspirada en la luz natural de las sierras cordobesas y el compromiso con la sostenibilidad, Sofia comenzó cosiendo prendas a mano con telas recicladas de proveedores locales. Lo que empezó como un pequeño taller familiar para crear ropa cómoda y ética para el día a día, ha crecido hasta convertirse en una línea de moda urbana que fusiona minimalismo escandinavo con toques argentinos. Hoy, Lumina Threads se enfoca en piezas atemporales, producidas en ediciones limitadas para minimizar el impacto ambiental, y ha ganado fans en ferias de diseño independientes. Nuestra misión: iluminar tu guardarropa con estilo consciente y duradero.</p>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section id="products" class="products">
+        <h3>Colección Destacada</h3>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Camisa Minimalista"> <!-- Stock: Camisa blanca -->
+                <h4>Camisa Algodón</h4>
+                <p>Reciclado y atemporal. $45.000 ARS</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Pantalón Beige"> <!-- Stock: Pantalón minimal -->
+                <h4>Pantalón Lino</h4>
+                <p>Sostenible y fluido. $60.000 ARS</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Vestido Oliva"> <!-- Stock: Vestido simple -->
+                <h4>Vestido Oliva</h4>
+                <p>Edición limitada. $55.000 ARS</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h3>Explora la Colección</h3>
+        <p>Únete para recibir actualizaciones sobre nuestras piezas sostenibles y eventos locales.</p>
+        <a href="mailto:info@luminathreads.com" class="btn">Ver Más</a>
+    </section>
+</body>
+</html>
